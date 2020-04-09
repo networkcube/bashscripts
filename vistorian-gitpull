@@ -1,0 +1,15 @@
+#!/bin/bash
+
+FILES=*
+echo '>>> Start pulling all vistorian repos'
+for file in $FILES
+do
+	if [[ -d "$file" ]]; then
+		echo '---'
+		echo 'GIT PULL in dir: ' $file 
+		cd $file
+  	 	git pull
+   	 	cd .. 
+   	fi
+done
+echo '<<<<<< End pulling all vistorian repos'

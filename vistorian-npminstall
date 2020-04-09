@@ -1,0 +1,23 @@
+#!/bin/bash
+# installing order is important
+
+cd vistorian-core
+npm install
+
+cd ../vistorian-matrix
+npm install
+
+cd ../vistorian-nodelink
+npm install
+
+cd ../vistorian-map
+npm install
+
+cd ../vistorian-dynamicego
+npm install
+
+cd ../vistorian-bookmarkbrowser
+npm install
+
+cd ../vistorian-web
+npm install

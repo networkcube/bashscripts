@@ -1,0 +1,22 @@
+#!/bin/bash
+
+FILES=*
+
+echo '>>>>>> START PREPARE LOCAL DEVELOPMENT >>>>>>>'
+for file in $FILES
+do
+	echo 'next directory: ' $file
+	if [[ -d "$file" ]]; then
+		echo '  LINK TO LOCAL FILES in dir' $file 
+	    cd $file
+	 	sed -i '' 's/"vistorian-core": "latest"/"vistorian-core": "file:..\/vistorian-core"/g' package.json
+	 	sed -i '' 's/"vistorian-bookmarkbrowser": "latest"/"vistorian-bookmarkbrowser": "file:..\/vistorian-bookmarkbrowser"/g' package.json
+		sed -i '' 's/"vistorian-nodelink": "latest"/"vistorian-nodelink": "file:..\/vistorian-nodelink"/g' package.json
+		sed -i '' 's/"vistorian-matrix": "latest"/"vistorian-matrix": "file:..\/vistorian-matrix"/g' package.json
+		sed -i '' 's/"vistorian-dynamicego": "latest"/"vistorian-dynamicego": "file:..\/vistorian-dynamicego"/g' package.json
+		sed -i '' 's/"vistorian-map": "latest"/"vistorian-map": "file:..\/vistorian-map"/g' package.json
+		sed -i '' 's/"vistorian-web": "latest"/"vistorian-web": "file:..\/vistorian-web"/g' package.json
+   	 	cd .. 
+   	fi
+done
+echo '<<<<<< END PREPARE LOCAL DEVELOPMENT <<<<<<<<<'
