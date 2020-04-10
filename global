@@ -6,12 +6,10 @@ FILES=*
 echo '>>>>>> START PREPARE GLOBAL DEVELOPMENT >>>>>>>'
 for file in $FILES
 do
-	echo 'next file' $file
+	echo 'next directory: ' $file
 	if [[ -d "$file" ]]; then
 		echo '-------------------'
-		echo '-------------------'
-		echo 'LINK TO NPM REPOS FILES in dir' $file 
-		echo '-------------------'
+		echo '>> LINK TO NPM REPOS FILES in dir' $file 
 	    cd $file
 	 	sed -i '' 's/"vistorian-core": "file:..\/vistorian-core"/"vistorian-core": "latest"/g' package.json
 	 	sed -i '' 's/"vistorian-nodelink": "file:..\/vistorian-nodelink"/"vistorian-nodelink": "latest"/g' package.json
@@ -20,7 +18,7 @@ do
 	 	sed -i '' 's/"vistorian-dynamicego": "file:..\/vistorian-dynamicego"/"vistorian-dynamicego": "latest"/g' package.json
 	 	sed -i '' 's/"vistorian-bookmarkbrowser": "file:..\/vistorian-bookmarkbrowser"/"vistorian-bookmarkbrowser": "latest"/g' package.json
 	 	sed -i '' 's/"vistorian-web": "file:..\/vistorian-web"/"vistorian-web": "latest"/g' package.json
-	  	echo '> done'
+	  	echo '<< DONE ' $file
    	 	cd ..  
    	fi
 done
