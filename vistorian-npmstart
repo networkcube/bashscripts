@@ -1,5 +1,0 @@
-#!/bin/bash
-cd .. 
-cd vistorian-web
-npm start
-cd vistorian-devscripts
