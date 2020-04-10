@@ -1,0 +1,29 @@
+#!/bin/bash
+
+while getopts m:e option
+do
+	case "${option}"
+	in
+	m) MESSAGE=${OPTARG};;
+	e) MESSAGE=${OPTARG};;
+	esac
+done
+
+cd ..
+FILES=*
+echo '>>> Start pulling all vistorian repos'
+for file in $FILES
+do
+	if [[ -d "$file" ]]; then
+		echo '---'
+		echo 'GIT PULL in dir: ' $file 
+		cd $file
+		git add --all
+		git commit -m MESSAGE
+		git push
+		cd .. 
+   	fi
+done
+
+echo '<<<<<< End pulling all vistorian repos'
+cd vistorian-devscripts
