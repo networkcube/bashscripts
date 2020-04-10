@@ -1,5 +1,6 @@
 #!/bin/bash
-# installing order is important
+# installing order matters
+
 cd .. 
 cd vistorian-core
 npm install
@@ -22,4 +23,5 @@ npm install
 cd ../vistorian-web
 npm install
 
-cd vistorian-devscripts
+# return to this folder
+cd bashscripts

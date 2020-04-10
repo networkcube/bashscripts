@@ -21,4 +21,5 @@ do
    	fi
 done
 echo '<<<<<< END PREPARE LOCAL DEVELOPMENT <<<<<<<<<'
-cd vistorian-devscripts
+# return to this folder
+cd bashscripts

@@ -14,4 +14,5 @@ do
    	fi
 done
 echo '<<<<<< End pulling all vistorian repos'
-cd vistorian-devscripts
+# return to this folder
+cd bashscripts
