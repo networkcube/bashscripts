@@ -16,12 +16,12 @@ for file in $FILES
 do
 	if [[ -d "$file" ]]; then
 		echo '----------------'
-		echo 'GIT PULL in dir: ' $file 
+		echo '>> GIT PULL in dir: ' $file 
 		cd $file
 		git add --all
 		git commit -m MESSAGE
 		git push
-		echo 'COMMIT DONE'
+		echo '>> COMMIT DONE'
 		cd .. 
    	fi
 done
