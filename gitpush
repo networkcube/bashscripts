@@ -10,8 +10,6 @@ do
 	esac
 done
 
-./global
-
 cd ..
 FILES=*
 echo '>>> Start pulling all vistorian repos'
